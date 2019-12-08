@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rtgui version="1.0">
+  <widget class="Panel" name="wifiItem">
+    <property name="rect">
+      <x>0</x>
+      <y>0</y>
+      <width>480</width>
+      <height>43</height>
+    </property>
+    <widgets>
+      <widget name="strength" class="imagebox">
+        <property name="rect">
+          <x>313</x>
+          <y>0</y>
+          <width>50</width>
+          <height>40</height>
+        </property>
+      </widget>
+      <widget name="security" class="imagebox">
+        <property name="rect">
+          <x>406</x>
+          <y>0</y>
+          <width>50</width>
+          <height>40</height>
+        </property>
+      </widget>
+      <widget name="tick" class="imagebox">
+        <property name="rect">
+          <x>0</x>
+          <y>0</y>
+          <width>50</width>
+          <height>40</height>
+        </property>
+      </widget>
+      <widget name="button1" class="button" bindtap="onWifiConnect">
+        <property name="rect">
+          <x>111</x>
+          <y>0</y>
+          <width>190</width>
+          <height>40</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="text">
+          <string>button1</string>
+        </property>
+      </widget>
+    </widgets>
+  </widget>
+</rtgui>

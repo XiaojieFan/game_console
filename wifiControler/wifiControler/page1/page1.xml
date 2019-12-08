@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rtgui version="1.0">
+  <class>Page</class>
+  <widget class="Page" name="page1">
+    <widgets>
+      <widget name="wifiListInfo" class="listctrl" bindtap="onDrag">
+        <property name="rect">
+          <x>20</x>
+          <y>26</y>
+          <width>447</width>
+          <height>227</height>
+        </property>
+        <property name="direction">
+          <enum>VERTICAL</enum>
+        </property>
+        <property name="gap">
+          <number>5</number>
+        </property>
+      </widget>
+    </widgets>
+  </widget>
+</rtgui>

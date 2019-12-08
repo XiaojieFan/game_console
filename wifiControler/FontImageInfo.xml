@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<FilePaths>
+  <ImageFilePaths>
+    <ImageFilePath>wifi_middle.PNG</ImageFilePath>
+    <ImageFilePath>wifi_secure.PNG</ImageFilePath>
+    <ImageFilePath>wifi_strong.PNG</ImageFilePath>
+    <ImageFilePath>wifi_tick.PNG</ImageFilePath>
+    <ImageFilePath>wifi_weak.PNG</ImageFilePath>
+  </ImageFilePaths>
+  <FontFilePaths />
+</FilePaths>

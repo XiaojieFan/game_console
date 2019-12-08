@@ -1,0 +1,922 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rtgui version="1.0">
+  <class>Page</class>
+  <widget class="Page" name="keyboard">
+    <property name="background">
+      <a>255</a>
+      <r>255</r>
+      <g>255</g>
+      <b>255</b>
+    </property>
+    <widgets>
+      <widget name="Cancel" class="button" bindtap="onBtn">
+        <property name="text">
+          <string>Cancel</string>
+        </property>
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>413</x>
+          <y>224</y>
+          <width>54</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>0</a>
+          <r>212</r>
+          <g>208</g>
+          <b>200</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+      <widget name="panel1" class="panel">
+        <property name="rect">
+          <x>18</x>
+          <y>16</y>
+          <width>447</width>
+          <height>45</height>
+        </property>
+        <property name="background">
+          <a>0</a>
+          <r>212</r>
+          <g>208</g>
+          <b>200</b>
+        </property>
+        <property name="backgroundImg">
+          <string>keyboardLabel.9.png</string>
+        </property>
+        <widgets>
+          <widget name="TextLabel" class="label">
+            <property name="rect">
+              <x>24</x>
+              <y>21</y>
+              <width>436</width>
+              <height>36</height>
+            </property>
+            <property name="align">
+              <enum>RTGUI_ALIGN_RIGHT | RTGUI_ALIGN_CENTER_VERTICAL | RTGUI_ALIGN_TTF_SIZE</enum>
+            </property>
+            <property name="background">
+              <a>0</a>
+              <r>212</r>
+              <g>208</g>
+              <b>200</b>
+            </property>
+            <property name="font">
+              <family>ASCII.TTF</family>
+              <size>22</size>
+            </property>
+          </widget>
+        </widgets>
+      </widget>
+      <widget name="button42" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>349</x>
+          <y>224</y>
+          <width>52</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+      <widget name="button41" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>81</x>
+          <y>224</y>
+          <width>258</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+      <widget name="button40" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>15</x>
+          <y>224</y>
+          <width>54</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>14</size>
+        </property>
+      </widget>
+      <widget name="button38" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>413</x>
+          <y>180</y>
+          <width>54</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="longpress" />
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+      <widget name="button37" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>365</x>
+          <y>180</y>
+          <width>36</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+      <widget name="button36" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>318</x>
+          <y>180</y>
+          <width>36</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+      <widget name="button35" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>270</x>
+          <y>180</y>
+          <width>36</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+      <widget name="button34" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>223</x>
+          <y>180</y>
+          <width>36</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+      <widget name="button33" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>175</x>
+          <y>180</y>
+          <width>36</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+      <widget name="button32" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>128</x>
+          <y>180</y>
+          <width>36</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+      <widget name="button31" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>81</x>
+          <y>180</y>
+          <width>36</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+      <widget name="button30" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="rect">
+          <x>15</x>
+          <y>180</y>
+          <width>54</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+      <widget name="button28" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>413</x>
+          <y>134</y>
+          <width>36</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+      <widget name="button27" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>366</x>
+          <y>134</y>
+          <width>36</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+      <widget name="button26" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>318</x>
+          <y>134</y>
+          <width>36</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+      <widget name="button25" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>271</x>
+          <y>134</y>
+          <width>36</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+      <widget name="button24" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>223</x>
+          <y>134</y>
+          <width>36</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+      <widget name="button23" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>176</x>
+          <y>134</y>
+          <width>36</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+      <widget name="button22" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>129</x>
+          <y>134</y>
+          <width>36</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+      <widget name="button21" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>81</x>
+          <y>134</y>
+          <width>36</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+      <widget name="button20" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>34</x>
+          <y>134</y>
+          <width>36</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+      <widget name="button19" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>431</x>
+          <y>87</y>
+          <width>36</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+      <widget name="button18" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>385</x>
+          <y>87</y>
+          <width>36</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+      <widget name="button17" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>339</x>
+          <y>87</y>
+          <width>36</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+      <widget name="button16" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>292</x>
+          <y>87</y>
+          <width>36</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+      <widget name="button15" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>246</x>
+          <y>87</y>
+          <width>36</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+      <widget name="button14" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>200</x>
+          <y>87</y>
+          <width>36</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+      <widget name="button13" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>154</x>
+          <y>87</y>
+          <width>36</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+      <widget name="button12" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>108</x>
+          <y>87</y>
+          <width>36</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+      <widget name="button11" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>61</x>
+          <y>87</y>
+          <width>36</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+      <widget name="button10" class="button" bindtap="onBtn">
+        <property name="norImg">
+          <string>keyboard.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>keyboardPush.9.png</string>
+        </property>
+        <property name="rect">
+          <x>15</x>
+          <y>87</y>
+          <width>36</width>
+          <height>34</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="background">
+          <a>255</a>
+          <r>255</r>
+          <g>255</g>
+          <b>255</b>
+        </property>
+        <property name="font">
+          <family>ASCII.TTF</family>
+          <size>17</size>
+        </property>
+      </widget>
+    </widgets>
+  </widget>
+</rtgui>
