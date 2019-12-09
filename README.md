@@ -18,7 +18,7 @@
 
 # 软件框架说明
 
-![软件框架](.\car\stm32l475-atk-pandora\docs\软件框架.png)
+![软件框架](./car/stm32l475-atk-pandora/docs/软件框架.png)
 
 1. 柿饼派使用 wifi 控件 及net 控件 作为client 连接 server 端的小车;
 2. 小车主控板为潘多拉板子，使用rt-robot 软件包控制小车地盘电机；
@@ -56,13 +56,13 @@
 
 - tcpserver_sample.c 中 导出命令要有分号。下载的软件包中没有，导致无法导出命令。
 
-  (''')
+  
 
-   MSH_CMD_EXPORT(tcpserver, server start); 
+   `MSH_CMD_EXPORT(tcpserver, server start);` 
 
-  MSH_CMD_EXPORT(tcpserver_stop, tcpserver stop);
+  `MSH_CMD_EXPORT(tcpserver_stop, tcpserver stop);`
 
-  (''')
+  
 
   
 
@@ -72,11 +72,11 @@
 
 ## 1.qrcode
 
-![qrcode](.\car\stm32l475-atk-pandora\docs\qrcode.png)
+![qrcode](./car/stm32l475-atk-pandora/docs/qrcode.png)
 
 ## 2.柿饼控制界面
 
-![柿饼UI1](.\car\stm32l475-atk-pandora\docs\wifi柿饼配置.png)
+![柿饼UI1](./car/stm32l475-atk-pandora/docs/wifi柿饼配置.png)
 
 
 
@@ -92,9 +92,9 @@
 
 这个软件包还是非常不错的。直接可以来作为服务端来使用。
 
-![server](.\car\stm32l475-atk-pandora\docs\tcpserver.png)
+![server](./car/stm32l475-atk-pandora/docs/tcpserver.png)
 
-![client](.\car\stm32l475-atk-pandora\docs\client.png)
+![client](./car/stm32l475-atk-pandora/docs/client.png)
 
 ## 各组件集成起来
 
