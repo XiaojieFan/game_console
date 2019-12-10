@@ -11,12 +11,29 @@
 #include <rtthread.h>
 #include <rtdevice.h>
 #include <board.h>
+#include <msh.h>
+#include "drv_wlan.h"
+#include "wifi_config.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+#define WLAN_SSID               "301"
+#define WLAN_PASSWORD           "qing14551"
+//#define WLAN_SSID               "Honor 8C"
+//#define WLAN_PASSWORD           "12345678"
+#define NET_READY_TIME_OUT       (rt_tick_from_millisecond(15 * 1000))
 
 /* defined the LED0 pin: PE7 */
 #define LED0_PIN    GET_PIN(E, 7)
 #define LED1_PIN    GET_PIN(E, 8)
 #define LED2_PIN    GET_PIN(E, 9)
+extern void moto_sample(void);
+extern void tcpserver_sample(char * ip,int ip_len);
 
+static void print_scan_result(struct rt_wlan_scan_result *scan_result);
+static void print_wlan_information(struct rt_wlan_info *info);
+
+static struct rt_semaphore net_ready;
 int main(void)
 {
     int count = 1;
@@ -30,10 +47,11 @@ int main(void)
 	    rt_thread_mdelay(500);
 	      rt_thread_mdelay(500);
 	   //moto_init();//初始化 小车各组件，
-	   //moto_sample();
-     telnet_server();//启动telnet 
+	   moto_sample();
+	
+    // telnet_server();//启动telnet 
 	 //  wifi_app();//扫描 连接 配置自动连接 
-    while ((count++) < 9)
+    while (1)//(count++) < 9)
     {
         rt_pin_write(LED0_PIN, PIN_HIGH);
         rt_thread_mdelay(500);
@@ -44,37 +62,9 @@ int main(void)
     return RT_EOK;
 }
 
-/*
- * Copyright (c) 2006-2018, RT-Thread Development Team
- *
- * SPDX-License-Identifier: Apache-2.0
- *
- * Change Logs:
- * Date           Author       Notes
- * 2018-09-01     ZeroFree     first implementation
- */
 
-#include <rtthread.h>
-#include <rtdevice.h>
-#include <board.h>
-#include <msh.h>
 
-#include "drv_wlan.h"
-#include "wifi_config.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-
-#define WLAN_SSID               "301"
-#define WLAN_PASSWORD           "qing14551"
-//#define WLAN_SSID               "Honor 8C"
-//#define WLAN_PASSWORD           "12345678"
-#define NET_READY_TIME_OUT       (rt_tick_from_millisecond(15 * 1000))
-
-static void print_scan_result(struct rt_wlan_scan_result *scan_result);
-static void print_wlan_information(struct rt_wlan_info *info);
-
-static struct rt_semaphore net_ready;
 
 /**
  * The callback of network ready event
@@ -91,11 +81,12 @@ void wlan_station_disconnect_handler(int event, struct rt_wlan_buff *buff, void 
 {
     rt_kprintf("disconnect from the network!\n");
 }
-
+struct rt_wlan_info info;
 int wifi_app(void)
 {
     int result = RT_EOK;
-    struct rt_wlan_info info;
+	  struct netdev *netdevinfo = NULL ;//add
+   // struct rt_wlan_info info;
 
     /* wait 500 milliseconds for wifi low level initialize complete */
     //rt_hw_wlan_wait_init_done(500);
@@ -129,6 +120,7 @@ int wifi_app(void)
     result = rt_wlan_connect(WLAN_SSID, WLAN_PASSWORD);
     if (result == RT_EOK)
     {
+
         rt_memset(&info, 0, sizeof(struct rt_wlan_info));
         /* Get the information of the current connection AP */
         rt_wlan_get_info(&info);
@@ -140,6 +132,10 @@ int wifi_app(void)
         {
             rt_kprintf("networking ready!\n");
             msh_exec("ifconfig", rt_strlen("ifconfig"));
+					  //netdevinfo = netdev_get_by_name("w0");
+					  //rt_kprintf(" my server ip address: %s\n", inet_ntoa(netdevinfo->ip_addr));
+            //tcpserver_sample(inet_ntoa(netdev->ip_addr),15);
+					   tcpserver_sample("192.168.1.101",15);
         }
         else
         {

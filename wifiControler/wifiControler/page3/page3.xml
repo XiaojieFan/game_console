@@ -3,10 +3,10 @@
   <class>Page</class>
   <widget class="Page" name="page3">
     <widgets>
-      <widget name="UP" class="button" bindtap="onBtn">
+      <widget name="RUN" class="button" bindtap="onBtn">
         <property name="rect">
-          <x>214</x>
-          <y>69</y>
+          <x>264</x>
+          <y>40</y>
           <width>80</width>
           <height>30</height>
         </property>
@@ -14,7 +14,7 @@
           <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
         </property>
         <property name="text">
-          <string>UP</string>
+          <string>RUN</string>
         </property>
         <property name="norImg">
           <string>btn_nor.9.png</string>
@@ -25,8 +25,8 @@
       </widget>
       <widget name="connect" class="button" bindtap="onBtn">
         <property name="rect">
-          <x>63</x>
-          <y>66</y>
+          <x>29</x>
+          <y>45</y>
           <width>80</width>
           <height>30</height>
         </property>
@@ -45,8 +45,8 @@
       </widget>
       <widget name="button22" class="button" bindtap="socket_action">
         <property name="rect">
-          <x>60</x>
-          <y>130</y>
+          <x>30</x>
+          <y>104</y>
           <width>80</width>
           <height>30</height>
         </property>
@@ -55,6 +55,86 @@
         </property>
         <property name="text">
           <string>socket</string>
+        </property>
+        <property name="norImg">
+          <string>btn_nor.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>btn_sel.9.png</string>
+        </property>
+      </widget>
+      <widget name="STOP" class="button" bindtap="onBtn">
+        <property name="rect">
+          <x>267</x>
+          <y>117</y>
+          <width>80</width>
+          <height>30</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="text">
+          <string>STOP</string>
+        </property>
+        <property name="norImg">
+          <string>btn_nor.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>btn_sel.9.png</string>
+        </property>
+      </widget>
+      <widget name="LEFT" class="button" bindtap="onBtn">
+        <property name="rect">
+          <x>157</x>
+          <y>114</y>
+          <width>80</width>
+          <height>30</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="text">
+          <string>LEFT</string>
+        </property>
+        <property name="norImg">
+          <string>btn_nor.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>btn_sel.9.png</string>
+        </property>
+      </widget>
+      <widget name="RIGHT" class="button" bindtap="onBtn">
+        <property name="rect">
+          <x>380</x>
+          <y>115</y>
+          <width>80</width>
+          <height>30</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="text">
+          <string>RIGHT</string>
+        </property>
+        <property name="norImg">
+          <string>btn_nor.9.png</string>
+        </property>
+        <property name="downImg">
+          <string>btn_sel.9.png</string>
+        </property>
+      </widget>
+      <widget name="BACK" class="button" bindtap="onBtn">
+        <property name="rect">
+          <x>268</x>
+          <y>187</y>
+          <width>80</width>
+          <height>30</height>
+        </property>
+        <property name="align">
+          <enum>RTGUI_ALIGN_CENTER_HORIZONTAL | RTGUI_ALIGN_CENTER_VERTICAL</enum>
+        </property>
+        <property name="text">
+          <string>BACK</string>
         </property>
         <property name="norImg">
           <string>btn_nor.9.png</string>
