@@ -210,23 +210,8 @@
 
 /* IoT - internet of things */
 
-#define PKG_USING_WEBNET
-#define WEBNET_PORT 80
-#define WEBNET_CONN_MAX 4
-#define WEBNET_ROOT "/webnet"
-
-/* Select supported modules */
-
-#define WEBNET_USING_AUTH
-#define WEBNET_USING_CGI
-#define WEBNET_USING_ASP
-#define WEBNET_USING_SSI
-#define WEBNET_USING_INDEX
-#define WEBNET_USING_ALIAS
-#define WEBNET_USING_UPLOAD
-#define WEBNET_CACHE_LEVEL 0
-#define WEBNET_USING_SAMPLES
-#define PKG_USING_WEBNET_V201
+#define PKG_USING_CJSON
+#define PKG_USING_CJSON_LATEST_VERSION
 
 /* Wi-Fi */
 
@@ -241,6 +226,14 @@
 
 /* IoT Cloud */
 
+#define PKG_USING_TCPSERVER
+#define TCPSERVER_NAME "tcpserv"
+#define TCPSERVER_STACK_SIZE 4096
+#define TCPSERVER_PRIO 12
+#define TCPSERVER_SOCKET_MAX 512
+#define TCPSERVER_CLI_NUM 5
+#define PKG_TCPSERVER_SAMPLE
+#define PKG_USING_TCPSERVER_LATEST_VERSION
 
 /* security packages */
 
@@ -282,17 +275,6 @@
 #define SDIO_MAX_FREQ 24000000
 #define SDIO_ALIGN_LEN 32
 #define PKG_USING_STM32_SDIO_V102
-#define PKG_USING_INFRARED
-
-/* Select infrared decoder */
-
-#define INFRARED_NEC_DECODER
-#define NEC_DEVIATION 100
-#define PKG_USING_DRV_INFRARED
-#define INFRARED_RECEIVE
-#define INFRARED_RECEIVE_PIN 17
-#define INFRARED_RECEIVE_HWTIMER "timer16"
-#define PKG_USING_INFRARED_LATEST_VERSION
 
 /* miscellaneous packages */
 

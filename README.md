@@ -54,19 +54,34 @@
 
 ***注意***
 
-- tcpserver_sample.c 中 导出命令要有分号。下载的软件包中没有，导致无法导出命令。
+1. tcpserver_sample.c 中 导出命令要有分号。下载的软件包中没有，导致无法导出命令。
 
-  
 
-   `MSH_CMD_EXPORT(tcpserver, server start);` 
 
-  `MSH_CMD_EXPORT(tcpserver_stop, tcpserver stop);`
 
-  
+`MSH_CMD_EXPORT(tcpserver, server start);` 
 
-  
+`MSH_CMD_EXPORT(tcpserver_stop, tcpserver stop);`
 
-  
+2.程序中需要知道 网卡的IP信息，来作为服务器的IP，那如何在程序中获取已连接WiFi 的ip 地址？
+
+可通过如下函数：**通过名称w0获取网卡对象**
+
+'struct netdev ***netdev_get_by_name**(**const** **char** *name);'
+
+![station information](.\car\stm32l475-atk-pandora\docs\ipinfo.png)
+
+
+
+
+
+
+
+
+
+
+
+
 
 # 演示效果
 
@@ -77,6 +92,10 @@
 ## 2.柿饼控制界面
 
 ![柿饼UI1](./car/stm32l475-atk-pandora/docs/wifi柿饼配置.png)
+
+![pi socket](.\car\stm32l475-atk-pandora\docs\pisocket.png)
+
+![piui](.\car\stm32l475-atk-pandora\docs\piui.png)
 
 
 
@@ -96,9 +115,70 @@
 
 ![client](./car/stm32l475-atk-pandora/docs/client.png)
 
+
+
+电脑连接小车可以正常：
+
+![pc run](.\car\stm32l475-atk-pandora\docs\pc run.png)
+
+
+
+柿饼派 连接 小车就不行：
+
+解决办法：服务器收到命令后，不用返回数据。就可以。
+
+![pi run error](.\car\stm32l475-atk-pandora\docs\pi run error.png)
+
+正常OK 
+
+![OK](.\car\stm32l475-atk-pandora\docs\OK.png)
+
+
+
 ## 各组件集成起来
 
-暂无。
+[car run ](.\car\stm32l475-atk-pandora\docs\car run.mp4)
+
+遇到的问题：
+
+1. 柿饼派作为客户端连接pc 没问题，但连接小车的化，有时候会出现柿饼派闪退，最后解决办法就是，服务器收到数据不回复。
+
+   
+
+      case TCPSERVER_EVENT_RECV:
+           ret = tcpserver_recv(client, buf, 1024, -1);
+           if (ret > 0)
+           {
+   					  if(memcmp(buf,"run",3) == 0)
+   						{
+   							rt_kprintf("\n start run \n");
+   							run();
+   						}
+   						else if (memcmp(buf,"back",4) == 0)
+   						{
+   					    rt_kprintf("\n start back \n");	
+   									back();						
+   						}
+   						else if(memcmp(buf,"left",4) == 0)
+   						{
+   							rt_kprintf("\n start left \n");
+   							left();
+   						}
+   						else if (memcmp(buf,"right",4) == 0)
+   						{
+   					    rt_kprintf("\n start right \n");	
+   							right();
+   						}
+   						else if (memcmp(buf,"stop",4) == 0)
+   						{
+   						   rt_kprintf("\n start stop \n");	
+   							stop();
+   						}
+               //ret = tcpserver_send(client, buf, ret, 0);
+           }
+           break;
+
+   
 
 # 代码地址
 

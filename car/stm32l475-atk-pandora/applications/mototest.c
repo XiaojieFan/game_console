@@ -9,7 +9,7 @@
 #include "kinematics.h"
 #include "chassis.h"
 #include <rtdbg.h>
-#include "infrared.h"
+
 
 #define THREAD_PRIORITY 23
 #define THREAD_STACK_SIZE      1024
@@ -257,29 +257,3 @@ void moto_sample(void)
 
 MSH_CMD_EXPORT(moto_sample, moto test);
 #define DBG_LEVEL     DBG_LOG//DBG_INFO
-void ir_test(void)
-{
-	struct infrared_decoder_data infrared_data;
-	ir_select_decoder("nec");
-	while(1)
-	{
-  /* 读取数据 */
-        //if(user_read_api("nec",&infrared_data) == RT_EOK)
-		     if(infrared_read("nec", &infrared_data) ==RT_EOK)
-        {
-            if(infrared_data.data.nec.repeat)
-            {
-                LOG_D("repeat%d\n",infrared_data.data.nec.repeat);
-            }
-            else
-            {
-                LOG_D("APP addr:0x%02X key:0x%02X\n",infrared_data.data.nec.addr,infrared_data.data.nec.key);
-                /* 发送数据 */
-          //      user_write_api("nec",&infrared_data);
-            }
-        }
-
-        rt_thread_mdelay(10);
-	}
-}
-MSH_CMD_EXPORT(ir_test,ir sample);

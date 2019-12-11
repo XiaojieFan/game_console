@@ -33,10 +33,30 @@ var page = {
    
 
      }
-     else if(event.target.id == "UP")
+     else if(event.target.id == "RUN")
      {
-         console.log("start up");
-       socketglobal.write("Hello,this is rtt",function(){console.log("socket writes successful,starts trans");});
+         console.log("start RUN");
+       socketglobal.write("run",function(){console.log("socket writes successful,starts run");});
+     }
+     else if(event.target.id == "STOP")
+     {
+         console.log("start STOP");
+       socketglobal.write("stop",function(){console.log("socket writes successful,starts stop");});
+     }
+     else if(event.target.id == "LEFT")
+     {
+         console.log("start LEFT");
+       socketglobal.write("left",function(){console.log("socket writes successful,starts left");});
+     }
+     else if(event.target.id == "RIGHT")
+     {
+         console.log("start RIGHT");
+       socketglobal.write("right",function(){console.log("socket writes successful,starts right");});
+     }
+     else if(event.target.id == "BACK")
+     {
+         console.log("start BACK");
+       socketglobal.write("back",function(){console.log("socket writes successful,starts back");});
      }
     }, 
     socket_action:function(event){
@@ -59,7 +79,7 @@ var page = {
         var net = require('net');
         socketglobal = new net.Socket();
         socketglobal.on('data',fun_data);
-        socketglobal.connect(8080,'192.168.1.105',fun_connect);
+        socketglobal.connect(5000,'192.168.1.101',fun_connect);
        
        
     },

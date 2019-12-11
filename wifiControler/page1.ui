@@ -39,7 +39,7 @@
       </Property>
     </Object>
     <Property name="Text">page1</Property>
-    <Property name="win_location">81, 123</Property>
+    <Property name="win_location">410, 288</Property>
     <Property name="EnterAnimState">False</Property>
     <Property name="EmergeLocation">无</Property>
     <Property name="Frame">10</Property>
@@ -56,8 +56,8 @@
       <Property name="PathBackImage">
       </Property>
       <Property name="Visibled">False</Property>
-      <Property name="X">96</Property>
-      <Property name="Y">138</Property>
+      <Property name="X">425</Property>
+      <Property name="Y">303</Property>
       <Property name="_Height">272</Property>
       <Property name="_Name">page1</Property>
       <Property name="_Width">480</Property>
@@ -66,7 +66,7 @@
     </Property>
     <Property name="BackColor">212, 208, 200</Property>
     <Property name="ClientSize">480, 272</Property>
-    <Property name="Location">96, 138</Property>
+    <Property name="Location">425, 303</Property>
     <Property name="DataBindings">
       <Property name="DefaultDataSourceUpdateMode">OnValidation</Property>
     </Property>
