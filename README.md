@@ -1,3 +1,5 @@
+
+
 # 柿饼派游戏机
 
 基于柿饼派的游戏主机，目前主要是柿饼派使用wifi通信 作为客户端 用来控制基于RT-Thread  rt-robot 软件包小车,小车主控板使用潘多拉板子。
@@ -71,7 +73,7 @@
 
 'struct netdev ***netdev_get_by_name**(**const** **char** *name);'
 
-![station information](.\car\stm32l475-atk-pandora\docs\ipinfo.png)
+![station information](./car/stm32l475-atk-pandora/docs/ipinfo.png)
 
 
 
@@ -93,9 +95,13 @@
 
 ![柿饼UI1](./car/stm32l475-atk-pandora/docs/wifi柿饼配置.png)
 
-![pi socket](.\car\stm32l475-atk-pandora\docs\pisocket.png)
+柿饼派连接server 成功：
 
-![piui](.\car\stm32l475-atk-pandora\docs\piui.png)
+![pi socket](./car/stm32l475-atk-pandora/docs/pisocket.png)
+
+柿饼派控制界面：
+
+![piui](./car/stm32l475-atk-pandora/docs/piui.png)
 
 
 
@@ -154,6 +160,8 @@ static int cJSON_test(int argc, char **argv)
 MSH_CMD_EXPORT(cJSON_test, cJSON test);
 ```
 
+cJSON 测试结果：
+
 ![cJSON](./car/stm32l475-atk-pandora/docs/cJSON.PNG)
 
 ## 5.TCP server
@@ -168,7 +176,7 @@ MSH_CMD_EXPORT(cJSON_test, cJSON test);
 
 电脑连接小车可以正常：
 
-![pc run](.\car\stm32l475-atk-pandora\docs\pc run.png)
+![pc run](./car/stm32l475-atk-pandora/docs/pc run.png)
 
 
 
