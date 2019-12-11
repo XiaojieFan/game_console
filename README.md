@@ -73,6 +73,8 @@
 
 'struct netdev ***netdev_get_by_name**(**const** **char** *name);'
 
+
+
 ![station information](./car/stm32l475-atk-pandora/docs/ipinfo.png)
 
 
@@ -235,12 +237,10 @@ case TCPSERVER_EVENT_RECV:
            break;
    ```
    
-         2.小车作为server 端，如何固定IP 地址？
    
+     2.小车作为server 端，如何固定IP 地址？ 
    
-   ​      
-   
-    3.使用软件包tcpserver 时候，在tcpsever_sample.c 文件中修改，提交github 时，软件包没有提交上去？
+     3.使用软件包tcpserver 时候，在tcpsever_sample.c 文件中修改，提交github 时，软件包没有提交上去？
    
    原因是与提交的忽略文件有关。
 
