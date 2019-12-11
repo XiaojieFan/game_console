@@ -170,7 +170,10 @@ cJSON 测试结果：
 
 这个软件包还是非常不错的。直接可以来作为服务端来使用。
 
+
 ![server](./car/stm32l475-atk-pandora/docs/tcpserver.png)
+
+
 
 ![client](./car/stm32l475-atk-pandora/docs/client.png)
 
@@ -196,13 +199,13 @@ cJSON 测试结果：
 
 ## 各组件集成起来
 
-[car run ](.\car\stm32l475-atk-pandora\docs\car run.mp4)
+[car run ](./car/stm32l475-atk-pandora/docs/car run.mp4)
 
 遇到的问题：
 
 1. 柿饼派作为客户端连接pc 没问题，但连接小车的化，有时候会出现柿饼派闪退，最后解决办法就是，服务器收到数据不回复。
 
-   ```
+```
 case TCPSERVER_EVENT_RECV:
            ret = tcpserver_recv(client, buf, 1024, -1);
            if (ret > 0)
@@ -235,9 +238,10 @@ case TCPSERVER_EVENT_RECV:
          //ret = tcpserver_send(client, buf, ret, 0);
            }
            break;
-   ```
+```
    
-   
+
+      
      2.小车作为server 端，如何固定IP 地址？ 
    
      3.使用软件包tcpserver 时候，在tcpsever_sample.c 文件中修改，提交github 时，软件包没有提交上去？
@@ -246,7 +250,9 @@ case TCPSERVER_EVENT_RECV:
 
 # 代码地址
 
-[game console](https://github.com/XiaojieFan/game_console)
+
+`[game console](https://github.com/XiaojieFan/game_console)`
+
 
 
 
