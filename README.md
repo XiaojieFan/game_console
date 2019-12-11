@@ -1,3 +1,5 @@
+
+
 # 柿饼派游戏机
 
 基于柿饼派的游戏主机，目前主要是柿饼派使用wifi通信 作为客户端 用来控制基于RT-Thread  rt-robot 软件包小车,小车主控板使用潘多拉板子。
@@ -26,7 +28,7 @@
 
 # 软件包使用说明
 
-主要介绍项目中使用到的软件包，也包括测试的一些软件包，比如二维码软件包。使用的软件包如下 : qrcode，rt-robot,cJSON,TCP server,
+主要介绍项目中使用到的软件包，也包括测试的一些软件包，比如二维码软件包。使用的软件包如下 : qrcode，rt-robot,cJSON,TCP server,Telnet
 
 ## 1.qrcode 二维码软件包
 
@@ -43,6 +45,8 @@
 [rt-robot软件包地址](https://github.com/RT-Thread-packages/rt-robot)
 
 ## 3.cJSON
+
+主要用途是客户端与服务器通信时，可以使用json 字符串的形式。
 
 [cJSON软件包地址](https://github.com/RT-Thread-packages/cJSON)
 
@@ -69,17 +73,17 @@
 
 'struct netdev ***netdev_get_by_name**(**const** **char** *name);'
 
-![station information](.\car\stm32l475-atk-pandora\docs\ipinfo.png)
+
+
+![station information](./car/stm32l475-atk-pandora/docs/ipinfo.png)
 
 
 
+## 5.Telnet：远程登录 RT-Thread
 
+主要作用是 方便远程调试和查看小车日志信息。
 
-
-
-
-
-
+[Telnet 软件包地址](https://github.com/RT-Thread-packages/netutils/blob/master/telnet/README.md)
 
 
 
@@ -93,9 +97,13 @@
 
 ![柿饼UI1](./car/stm32l475-atk-pandora/docs/wifi柿饼配置.png)
 
-![pi socket](.\car\stm32l475-atk-pandora\docs\pisocket.png)
+柿饼派连接server 成功：
 
-![piui](.\car\stm32l475-atk-pandora\docs\piui.png)
+![pi socket](./car/stm32l475-atk-pandora/docs/pisocket.png)
+
+柿饼派控制界面：
+
+![piui](./car/stm32l475-atk-pandora/docs/piui.png)
 
 
 
@@ -107,11 +115,65 @@
 
 - 只是自己跑起来，还么有联动起来。
 
-## 4.TCP server
+## 4.cJSON
+
+简单的测试例子
+
+```
+#include <rtthread.h>
+#include "cJSON.h"
+#include "cJSON_util.h"
+
+static int cJSON_test(int argc, char **argv)
+{
+
+    char *char_json = "{\"cmd\":\"run\",\"speed\":80}";
+    cJSON *json = cJSON_Parse(char_json);
+    //将传入的JSON结构转换未字符串 并打印 
+    char *buf = NULL;
+    cJSON *node = NULL;
+    buf = cJSON_Print(json);
+    rt_kprintf("data:%s",buf);
+    node = cJSON_GetObjectItem(json,"cmd");
+    if(node == NULL)
+    {
+        rt_kprintf("\n cmd node = NULL \n");
+    }
+    else
+    {
+        rt_kprintf("\n found cmd node,value is %s \n",node->valuestring);
+       
+    }
+
+        node = cJSON_GetObjectItem(json,"speed");
+    if(node == NULL)
+    {
+        rt_kprintf("\n speed node = NULL \n");
+    }
+    else
+    {
+        rt_kprintf("\n found speed node ,value is %d \n",node->valueint);
+    }
+    
+  cJSON_Delete(json);
+    
+    return 0;
+}
+MSH_CMD_EXPORT(cJSON_test, cJSON test);
+```
+
+cJSON 测试结果：
+
+![cJSON](./car/stm32l475-atk-pandora/docs/cJSON.PNG)
+
+## 5.TCP server
 
 这个软件包还是非常不错的。直接可以来作为服务端来使用。
 
+
 ![server](./car/stm32l475-atk-pandora/docs/tcpserver.png)
+
+
 
 ![client](./car/stm32l475-atk-pandora/docs/client.png)
 
@@ -119,7 +181,7 @@
 
 电脑连接小车可以正常：
 
-![pc run](.\car\stm32l475-atk-pandora\docs\pc run.png)
+![pc run](./car/stm32l475-atk-pandora/docs/pc run.png)
 
 
 
@@ -127,62 +189,70 @@
 
 解决办法：服务器收到命令后，不用返回数据。就可以。
 
-![pi run error](.\car\stm32l475-atk-pandora\docs\pi run error.png)
+![pi run error](./car/stm32l475-atk-pandora/docs/pi run error.png)
 
 正常OK 
 
-![OK](.\car\stm32l475-atk-pandora\docs\OK.png)
+![OK](./car/stm32l475-atk-pandora/docs/OK.png)
 
 
 
 ## 各组件集成起来
 
-[car run ](.\car\stm32l475-atk-pandora\docs\car run.mp4)
+[car run ](./car/stm32l475-atk-pandora/docs/car run.mp4)
 
 遇到的问题：
 
 1. 柿饼派作为客户端连接pc 没问题，但连接小车的化，有时候会出现柿饼派闪退，最后解决办法就是，服务器收到数据不回复。
 
-   
-
-      case TCPSERVER_EVENT_RECV:
+```
+case TCPSERVER_EVENT_RECV:
            ret = tcpserver_recv(client, buf, 1024, -1);
            if (ret > 0)
            {
-   					  if(memcmp(buf,"run",3) == 0)
-   						{
-   							rt_kprintf("\n start run \n");
-   							run();
-   						}
-   						else if (memcmp(buf,"back",4) == 0)
-   						{
-   					    rt_kprintf("\n start back \n");	
-   									back();						
-   						}
-   						else if(memcmp(buf,"left",4) == 0)
-   						{
-   							rt_kprintf("\n start left \n");
-   							left();
-   						}
-   						else if (memcmp(buf,"right",4) == 0)
-   						{
-   					    rt_kprintf("\n start right \n");	
-   							right();
-   						}
-   						else if (memcmp(buf,"stop",4) == 0)
-   						{
-   						   rt_kprintf("\n start stop \n");	
-   							stop();
-   						}
-               //ret = tcpserver_send(client, buf, ret, 0);
+         					  if(memcmp(buf,"run",3) == 0)
+      						{
+      							rt_kprintf("\n start run \n");
+      							run();
+      						}
+      						else if (memcmp(buf,"back",4) == 0)
+      						{
+      					    rt_kprintf("\n start back \n");	
+      									back();						
+      						}
+      						else if(memcmp(buf,"left",4) == 0)
+      						{
+      							rt_kprintf("\n start left \n");
+      							left();
+      						}
+      						else if (memcmp(buf,"right",4) == 0)
+      						{
+      					    rt_kprintf("\n start right \n");	
+      							right();
+      						}
+      						else if (memcmp(buf,"stop",4) == 0)
+      						{
+      						   rt_kprintf("\n start stop \n");	
+      							stop();
+      						}
+         //ret = tcpserver_send(client, buf, ret, 0);
            }
            break;
-
+```
    
+
+      
+     2.小车作为server 端，如何固定IP 地址？ 
+   
+     3.使用软件包tcpserver 时候，在tcpsever_sample.c 文件中修改，提交github 时，软件包没有提交上去？
+   
+   原因是与提交的忽略文件有关。
 
 # 代码地址
 
-[game console](https://github.com/XiaojieFan/game_console)
+
+`[game console](https://github.com/XiaojieFan/game_console)`
+
 
 
 
